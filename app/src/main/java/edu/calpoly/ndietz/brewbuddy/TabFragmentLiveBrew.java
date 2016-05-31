@@ -10,7 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
+import com.nispok.snackbar.SnackbarManager;
 
 import me.itangqi.waveloadingview.WaveLoadingView;
 
@@ -78,7 +78,9 @@ public class TabFragmentLiveBrew extends Fragment {
             public void onClick(View v) {
 //                kick off intent service
                 if (!((TabbedRecipe)getActivity()).isRecipeReady()) {
-                    Toast.makeText(getContext(), "Cannot start without a recipe!", Toast.LENGTH_SHORT).show();
+                    SnackbarManager.show(
+                            com.nispok.snackbar.Snackbar.with(getContext())
+                            .text("Recipe incomplete. Press enter on each field to complete."));
                 } else {
                     m_totalTime = ((TabbedRecipe)getActivity()).getRecipeTotalSeconds();
 
