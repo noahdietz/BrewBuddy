@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/primary_material_dark"
+    >
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_weight="0"
+        android:id="@+id/live_brew_start_button"
+        android:text="@string/live_brew_button_start"
+        android:textAlignment="center"
+        android:textSize="24dp"
+        android:background="@color/accent_material_dark"/>
+
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+        <me.itangqi.waveloadingview.WaveLoadingView
+            android:id="@+id/waveLoadingView"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:wlv_borderColor="@color/accent_material_dark"
+            app:wlv_borderWidth="3dp"
+            app:wlv_progressValue="0"
+            app:wlv_shapeType="circle"
+            app:wlv_round_rectangle="true"
+            app:wlv_triangle_direction="north"
+            app:wlv_titleCenterSize="36sp"
+            app:wlv_waveAmplitude="30"
+            app:wlv_waveColor="@color/accent_material_dark"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/live_brew_finish_button"
+        android:enabled="false"
+        android:layout_width="match_parent"
+        android:layout_gravity="bottom"
+        android:layout_weight="0"
+        android:layout_height="64dp"
+        android:textAlignment="center"
+        android:textSize="24dp"
+        android:text="@string/live_brew_button_finish"
+        android:background="@color/accent_material_dark"/>
+</LinearLayout>

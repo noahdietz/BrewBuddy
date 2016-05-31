@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:gravity="center"
+              android:descendantFocusability="beforeDescendants"
+              android:focusableInTouchMode="true"
+              android:weightSum="1"
+              android:background="@color/primary_material_dark"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:weightSum="1"
+        android:id="@+id/group_time_entry"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5">
+
+            <android.support.design.widget.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:id="@+id/recipe_time_minutes"
+                android:textAlignment="center"
+                android:hint="@string/recipe_time_minutes_label"
+                android:nextFocusDown="@+id/recipe_time_seconds"
+                android:textColor="@android:color/white"
+                android:textSize="36dp"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5">
+
+            <android.support.design.widget.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:id="@+id/recipe_time_seconds"
+                android:textAlignment="center"
+                android:hint="@string/recipe_time_seconds_label"
+                android:textColor="@android:color/white"
+                android:textSize="36dp"
+                android:nextFocusDown="@+id/time_advance_button"/>
+        </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_weight="0.5">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/cancel_button_selector"
+            android:background="@color/primary_material_dark"
+            android:padding="36dp"
+            android:id="@+id/time_cancel_button"/>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/confirm_button_selector"
+            android:background="@color/primary_material_dark"
+            android:padding="36dp"
+            android:id="@+id/time_advance_button"/>
+    </LinearLayout>
+
+</LinearLayout>

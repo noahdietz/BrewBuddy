@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/menu_filter"
+          android:title="Filter"
+          android:icon="@drawable/ic_filter_white"
+          app:showAsAction="ifRoom">
+
+        <menu>
+            <item android:id="@+id/submenu_chemex"
+                  android:title="@string/menu_chemex"/>
+            <item android:id="@+id/submenu_v60"
+                  android:title="@string/menu_hario_v60"/>
+            <item android:id="@+id/submenu_beehouse"
+                  android:title="@string/menu_bee_house"/>
+            <item android:id="@+id/submenu_kalita"
+                  android:title="@string/menu_kalita_wave"/>
+            <item android:id="@+id/submenu_mokapot"
+                  android:title="@string/menu_moka_pot"/>
+            <item android:id="@+id/submenu_frenchpress"
+                  android:title="@string/menu_french_press"/>
+            <item android:id="@+id/submenu_aeropress"
+                  android:title="@string/menu_aeropress"/>
+            <item android:id="@+id/submenu_all"
+                  android:title="@string/menu_show_all"/>
+        </menu>
+    </item>
+</menu>
