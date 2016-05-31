@@ -4,8 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -14,8 +12,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.nispok.snackbar.SnackbarManager;
+import com.nispok.snackbar.listeners.ActionClickListener;
+
 import java.util.ArrayList;
-import java.util.List;
 
 public class BrewHistoryList extends AppCompatActivity {
 
@@ -66,7 +66,7 @@ public class BrewHistoryList extends AppCompatActivity {
             this.m_filteredHistory = savedInstanceState.getParcelableArrayList(SAVED_FILTERED_LIST);
             this.m_filter = savedInstanceState.getInt(SAVED_FILTER);
 
-            Log.d("brewhistory", "filter: " + this.m_filter + "filtered size: "+m_filteredHistory.size() + " all: "+m_historyList.size());
+            Log.d("brewhistory", "filter: " + this.m_filter + " filtered size: "+m_filteredHistory.size() + " all: "+m_historyList.size());
         } else {
             Bundle extras = getIntent().getExtras();
             if (extras != null && extras.getInt(EXTRA_FILTER, -1) != -1) {
@@ -119,7 +119,22 @@ public class BrewHistoryList extends AppCompatActivity {
             }
         }
 
-        Log.d("brewhistory", "filtered size: "+m_filteredHistory.size());
+        if (this.m_filteredHistory.size() == 0) {
+            SnackbarManager.show(
+                    com.nispok.snackbar.Snackbar.with(this)
+                    .text("No entries in this filter")
+                    .actionLabel("Show all")
+                    .actionListener(new ActionClickListener() {
+                        @Override
+                        public void onActionClicked(com.nispok.snackbar.Snackbar snackbar) {
+                            m_filter = FILTER_SHOW_ALL;
+                            filterBrewHistory();
+                            m_historyAdapter.setList(m_filteredHistory);
+                            m_historyAdapter.notifyDataSetChanged();
+                        }
+                    }), this);
+        }
+
     }
 
     @Override
