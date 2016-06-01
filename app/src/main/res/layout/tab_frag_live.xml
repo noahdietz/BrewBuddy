@@ -15,7 +15,7 @@
         android:id="@+id/live_brew_start_button"
         android:text="@string/live_brew_button_start"
         android:textAlignment="center"
-        android:textSize="24dp"
+        android:textSize="24sp"
         android:background="@color/accent_material_dark"/>
 
     
@@ -37,7 +37,8 @@
             app:wlv_shapeType="circle"
             app:wlv_round_rectangle="true"
             app:wlv_triangle_direction="north"
-            app:wlv_titleCenterSize="36sp"
+            app:wlv_titleCenterSize="48sp"
+            app:wlv_titleCenterColor="@android:color/white"
             app:wlv_waveAmplitude="30"
             app:wlv_waveColor="@color/accent_material_dark"/>
     </LinearLayout>
@@ -50,7 +51,7 @@
         android:layout_weight="0"
         android:layout_height="64dp"
         android:textAlignment="center"
-        android:textSize="24dp"
+        android:textSize="24sp"
         android:text="@string/live_brew_button_finish"
         android:background="@color/accent_material_dark"/>
 </LinearLayout>

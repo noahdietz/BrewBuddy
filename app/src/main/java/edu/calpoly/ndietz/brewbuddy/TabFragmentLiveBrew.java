@@ -116,6 +116,7 @@ public class TabFragmentLiveBrew extends Fragment {
                 this.m_vwWave.setProgressValue(100);
                 this.m_vwWave.setCenterTitle("Drink up!");
             } else {
+                this.m_vwWave.setCenterTitle(""+time_left);
                 this.m_vwWave.setProgressValue(calcProgress(time_left));
             }
         }
